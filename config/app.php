@@ -14,6 +14,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+'version' => '1.0.0',
 
     /*
     |--------------------------------------------------------------------------
@@ -166,7 +167,7 @@ return [
          * Package Service Providers...
          */
         App\Providers\MetronicServiceProvider::class,
-
+        CrudGenerator\CrudGeneratorServiceProvider::class,
         /*
          * Application Service Providers...
          */
