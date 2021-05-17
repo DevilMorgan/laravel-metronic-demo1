@@ -167,7 +167,10 @@ return [
          * Package Service Providers...
          */
         App\Providers\MetronicServiceProvider::class,
-        CrudGenerator\CrudGeneratorServiceProvider::class,
+
+
+
+
         /*
          * Application Service Providers...
          */

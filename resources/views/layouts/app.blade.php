@@ -36,7 +36,6 @@
                             </li>
                         @endif
                     @else
-                        <li class="nav-item"><a class="nav-link" href="{{ route('vehicles.index') }}">{{ __('Vehicles') }}</a></li>
                         {{--nav-item hook--}}
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"

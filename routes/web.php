@@ -17,7 +17,7 @@ use Redbastie\Crudify\Helpers\AutoRoute;
 
 
 
-Route::get('/', 'PagesController@index');
+
 
 
 // Demo routes
@@ -32,14 +32,21 @@ Route::get('/icons/lineawesome', 'PagesController@lineawesome');
 Route::get('/icons/socicons', 'PagesController@socicons');
 Route::get('/icons/svg', 'PagesController@svg');
 
-// Quick search dummy route to display html elements in search dropdown (header search)
-Route::get('/quick-search', 'PagesController@quickSearch')->name('quick-search');
 
-Auth::routes(['register' => false]);
+
+Auth::routes(['register' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes(['register' => false]);
+// Crm Status
+Route::delete('crm-statuses/destroy', 'CrmStatusController@massDestroy')->name('crm-statuses.massDestroy');
+Route::post('crm-statuses/parse-csv-import', 'CrmStatusController@parseCsvImport')->name('crm-statuses.parseCsvImport');
+Route::post('crm-statuses/process-csv-import', 'CrmStatusController@processCsvImport')->name('crm-statuses.processCsvImport');
+Route::resource('crm-statuses', 'CrmStatusController');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 AutoRoute::controller('vehicles', \App\Http\Controllers\VehicleController::class);
+
+Auth::routes(['register' => false]);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

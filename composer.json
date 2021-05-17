@@ -15,6 +15,7 @@
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
         "redbastie/crudify": "^1.0",
+        "rogerarruda/laravel-metronic-components": "^1.0",
         "santigarcor/laratrust": "^6.3"
     },
     "require-dev": {
