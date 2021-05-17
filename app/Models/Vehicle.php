@@ -16,6 +16,7 @@ class Vehicle extends Model
     public function migration(Blueprint $table)
     {
         $table->id();
+
         $table->timestamps();
         $table->string('name');
     }

@@ -16,10 +16,6 @@ use Redbastie\Crudify\Helpers\AutoRoute;
 
 
 
-
-
-
-
 // Demo routes
 Route::get('/datatables', 'PagesController@datatables');
 Route::get('/ktdatatables', 'PagesController@ktDatatables');
@@ -38,15 +34,9 @@ Auth::routes(['register' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Crm Status
-Route::delete('crm-statuses/destroy', 'CrmStatusController@massDestroy')->name('crm-statuses.massDestroy');
-Route::post('crm-statuses/parse-csv-import', 'CrmStatusController@parseCsvImport')->name('crm-statuses.parseCsvImport');
-Route::post('crm-statuses/process-csv-import', 'CrmStatusController@processCsvImport')->name('crm-statuses.processCsvImport');
-Route::resource('crm-statuses', 'CrmStatusController');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-AutoRoute::controller('vehicles', \App\Http\Controllers\VehicleController::class);
-
-Auth::routes(['register' => false]);
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::delete('ap-managements/destroy', 'ApManagementController@massDestroy')->name('ap-managements.massDestroy');
+Route::post('ap-managements/parse-csv-import', 'ApManagementController@parseCsvImport')->name('ap-managements.parseCsvImport');
+Route::post('ap-managements/process-csv-import', 'ApManagementController@processCsvImport')->name('ap-managements.processCsvImport');
+Route::resource('ap-managements', 'ApManagementController');
+Route::get('ap-managements/cmd/{id}', 'ApManagementController@command')->name('cmd');

@@ -36,6 +36,7 @@
                             </li>
                         @endif
                     @else
+                        <li class="nav-item"><a class="nav-link" href="{{ route('ap-managements.index') }}">{{ __('Ap Managements') }}</a></li>
                         {{--nav-item hook--}}
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
